@@ -1,0 +1,19 @@
+public class Lavanya {
+    public static void main(String[] args) {
+
+        String name = "Lavanya";
+        String department = "Information Technology";
+        String college = "KGISL College";
+        int year = 2;
+
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Year: " + year);
+        System.out.println("College: " + college);
+
+        System.out.println("\nParticipations:");
+        System.out.println("1. Hackathon - JCT College");
+        System.out.println("2. Paper Presentation - KPR College");
+        System.out.println("3. PyExpo - First Year");
+    }
+}

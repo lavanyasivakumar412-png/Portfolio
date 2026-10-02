@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lavanya's Page</title>
+</head>
+<body>
+
+    <h1>Hi, I'm Lavanya</h1>
+    <h2>Information Technology Student</h2>
+
+    <p>I am a 2nd year IT student at KGISL College.</p>
+
+    <h3>My Participations</h3>
+    <ul>
+        <li>Hackathon - JCT College</li>
+        <li>Paper Presentation - KPR College</li>
+        <li>PyExpo - First Year</li>
+    </ul>
+
+</body>
+</html>
