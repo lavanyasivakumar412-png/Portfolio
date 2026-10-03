@@ -1,14 +1,51 @@
-public class Lavanya {
+public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Name: Lavanya");
-        System.out.println("Department: Information Technology");
-        System.out.println("Year: 2nd Year");
-        System.out.println("College: KGISL College");
+        String name = "Lavanya Sivakumar";
+        String department = "Information Technology";
+        String college = "KGISL College";
+        int year = 2;
 
-        System.out.println("Hackathon: JCT College");
-        System.out.println("Paper Presentation: KPR College");
-        System.out.println("PyExpo: First Year");
+        System.out.println("================================");
+        System.out.println("       STUDENT PROFILE");
+        System.out.println("================================");
+
+        System.out.println("Name       : " + name);
+        System.out.println("Department : " + department);
+        System.out.println("Year       : " + year);
+        System.out.println("College    : " + college);
+
+        System.out.println("\n--------------------------------");
+        System.out.println("       PARTICIPATIONS");
+        System.out.println("--------------------------------");
+
+        System.out.println("1. Hackathon - JCT College");
+        System.out.println("2. Paper Presentation - KPR College");
+        System.out.println("3. PyExpo - First Year");
+
+        System.out.println("\n--------------------------------");
+        System.out.println("       TECHNICAL SKILLS");
+        System.out.println("--------------------------------");
+
+        System.out.println("1. HTML");
+        System.out.println("2. CSS");
+        System.out.println("3. Java");
+        System.out.println("4. Python");
+        System.out.println("5. Data Structures");
+
+        System.out.println("\n--------------------------------");
+        System.out.println("            GOAL");
+        System.out.println("--------------------------------");
+
+        System.out.println(
+            "To improve my technical skills, " +
+            "develop innovative projects and " +
+            "participate in technical events."
+        );
+
+        System.out.println("\n================================");
+        System.out.println("       THANK YOU");
+        System.out.println("================================");
     }
 }
