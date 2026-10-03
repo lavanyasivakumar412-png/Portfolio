@@ -4,200 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Lavanya.S, Information Technology student at KGISL College, Coimbatore.">
-    <title>Lavanya.S Portfolio</title>
+    <meta name="description" content="Portfolio of Lavanya Sivakumar, Information Technology student at KGISL College.">
+
+    <title>Lavanya | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ========================================
-         NAVIGATION
-    ========================================= -->
+    <!-- NAVIGATION -->
 
     <nav>
-        <h2>Lavanya.S</h2>
 
-        <div class="nav-links">
+        <div class="logo">LAVANYA.S</div>
+
+        <div class="menu">
+
             <a href="#home">Home</a>
+
             <a href="#about">About</a>
+
             <a href="#skills">Skills</a>
-            <a href="#events">Events</a>
+
+            <a href="#achievements">Achievements</a>
+
             <a href="#goal">Goal</a>
+
         </div>
+
     </nav>
 
 
-    <!-- ========================================
-         HOME SECTION
-    ========================================= -->
+    <!-- PAGE 1 : WELCOME -->
 
-    <section id="home" class="hero">
+    <section id="home" class="page home">
 
-        <div class="hero-content">
+        <div class="content">
 
-            <p class="small-title">WELCOME TO MY PORTFOLIO</p>
+            <p class="small-text">WELCOME TO MY PORTFOLIO</p>
 
-            <h1>Hi, I'm <span>Lavanya</span></h1>
+            <h1>Hello, I'm</h1>
 
-            <h2>Information Technology Student</h2>
+            <h2>Lavanya Sivakumar</h2>
 
-            <p>
-                I am a second-year Information Technology student
-                at KGISL College, Coimbatore.
+            <p class="description">
+                Information Technology Student
+                <br>
+                KGISL College
             </p>
 
-            <button class="btn">Explore My Profile ↓</button>
+            <button class="next-btn" onclick="goToPage('about')">
+                Explore My Journey →
+            </button>
 
         </div>
 
     </section>
 
 
-    <!-- ========================================
-         ABOUT SECTION
-    ========================================= -->
+    <!-- PAGE 2 : ABOUT ME -->
 
-    <section id="about">
+    <section id="about" class="page about">
 
-        <h2 class="section-title">About Me</h2>
+        <div class="content">
 
-        <div class="about-box">
+            <p class="small-text">01 / ABOUT ME</p>
 
-            <p>
-                I am Lavanya.S, a second-year Information Technology
-                student at KGISL College. I am interested in learning
-                new technologies and developing innovative solutions.
+            <h1>Who Am I?</h1>
+
+            <p class="large-text">
+
+                I am <b>Lavanya Sivakumar</b>, a second-year
+                Information Technology student at
+                <b>KGISL College</b>.
+
             </p>
 
             <p>
-                I enjoy participating in technical events, hackathons
-                and paper presentations. These experiences help me
-                improve my technical knowledge, teamwork and
-                communication skills.
+
+                I am interested in technology, programming,
+                innovation and problem solving. I enjoy learning
+                new technologies and applying my knowledge through
+                technical events and projects.
+
             </p>
 
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         SKILLS SECTION
-    ========================================= -->
-
-    <section id="skills">
-
-        <h2 class="section-title">My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="skill">
-                <h3>HTML</h3>
-                <p>Web Page Structure</p>
-            </div>
-
-            <div class="skill">
-                <h3>CSS</h3>
-                <p>Web Page Styling</p>
-            </div>
-
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <p>Web Page Interaction</p>
-            </div>
-
-            <div class="skill">
-                <h3>Java</h3>
-                <p>Programming</p>
-            </div>
-
-            <div class="skill">
-                <h3>Python</h3>
-                <p>Programming &amp; Data</p>
-            </div>
-
-            <div class="skill">
-                <h3>Data Structures</h3>
-                <p>Problem Solving</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         EVENTS SECTION
-    ========================================= -->
-
-    <section id="events">
-
-        <h2 class="section-title">My Participations</h2>
-
-        <div class="projects-container">
-
-            <div class="project hackathon">
-
-                <span class="project-num">01</span>
-
-                <h3>Hackathon</h3>
-
-                <p>
-                    Participated in a Hackathon at
-                    JCT College.
-                </p>
-
-            </div>
-
-
-            <div class="project paper">
-
-                <span class="project-num">02</span>
-
-                <h3>Paper Presentation</h3>
-
-                <p>
-                    Participated in a Paper Presentation
-                    at KPR College.
-                </p>
-
-            </div>
-
-
-            <div class="project pyexpo">
-
-                <span class="project-num">03</span>
-
-                <h3>PyExpo</h3>
-
-                <p>
-                    Participated in PyExpo during
-                    my first year.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================
-         GOAL SECTION
-    ========================================= -->
-
-    <section id="goal">
-
-        <h2 class="section-title">My Goal</h2>
-
-        <div class="about-box">
-
             <p>
-                My goal is to improve my technical skills,
-                participate in more technical events and
-                develop innovative projects using emerging
-                technologies.
+
+                I believe that every technical event gives me
+                an opportunity to learn something new and improve
+                my skills.
+
             </p>
 
         </div>
@@ -205,21 +103,168 @@
     </section>
 
 
-    <!-- ========================================
-         FOOTER
-    ========================================= -->
+    <!-- PAGE 3 : SKILLS -->
+
+    <section id="skills" class="page skills">
+
+        <div class="content">
+
+            <p class="small-text">02 / SKILLS</p>
+
+            <h1>What I Know</h1>
+
+            <div class="skill-container">
+
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <p>Web Structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>CSS</h3>
+                    <p>Web Designing</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Web Interaction</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Programming</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Java</h3>
+                    <p>Object Oriented Programming</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data Structures</h3>
+                    <p>Problem Solving</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 4 : ACHIEVEMENTS -->
+
+    <section id="achievements" class="page achievements">
+
+        <div class="content">
+
+            <p class="small-text">03 / ACHIEVEMENTS</p>
+
+            <h1>My Experiences</h1>
+
+            <div class="achievement-container">
+
+                <div class="achievement-card">
+
+                    <span>01</span>
+
+                    <h3>Hackathon</h3>
+
+                    <p>
+                        Participated in a Hackathon
+                        at JCT College.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <span>02</span>
+
+                    <h3>Paper Presentation</h3>
+
+                    <p>
+                        Participated in a Paper Presentation
+                        at KPR College.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <span>03</span>
+
+                    <h3>PyExpo</h3>
+
+                    <p>
+                        Participated in PyExpo
+                        during my first year.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAGE 5 : GOAL -->
+
+    <section id="goal" class="page goal">
+
+        <div class="content">
+
+            <p class="small-text">04 / MY GOAL</p>
+
+            <h1>Where I'm Going</h1>
+
+            <p class="large-text">
+
+                "Learn. Build. Innovate."
+
+            </p>
+
+            <p>
+
+                My goal is to continuously improve my
+                programming and technical skills, participate
+                in more hackathons and technical events,
+                and develop innovative projects that can
+                solve real-world problems.
+
+            </p>
+
+            <p>
+
+                I want to explore emerging technologies
+                and build a strong career in the field
+                of Information Technology.
+
+            </p>
+
+            <button class="top-btn" onclick="goToPage('home')">
+                Back to Home ↑
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
-        <p>Made with ❤️ by Lavanya.S</p>
-
         <p>
-            © <span id="year">2026</span> Lavanya.S | All Rights Reserved
+            © 2026 Lavanya Sivakumar | Information Technology
         </p>
 
     </footer>
 
-    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
 
