@@ -1,38 +1,38 @@
 // ========================================
-// LAVANYA.S PORTFOLIO - JAVASCRIPT
+// LAVANYA.S - PORTFOLIO JAVASCRIPT
 // ========================================
 
 
 // ========================================
-// PAGE LOAD MESSAGE
+// PAGE LOADING
 // ========================================
 
 window.addEventListener("load", function () {
 
-    console.log("Welcome to Lavanya.S Portfolio!");
+    console.log("Lavanya.S portfolio loaded successfully.");
 
 });
 
 
 // ========================================
-// SMOOTH NAVIGATION
+// NAVIGATION
 // ========================================
 
-const navLinks = document.querySelectorAll("nav a");
+const navigationLinks = document.querySelectorAll(".nav-menu a");
 
-navLinks.forEach(function (link) {
+navigationLinks.forEach(function (link) {
 
     link.addEventListener("click", function (event) {
 
         event.preventDefault();
 
-        const targetId = link.getAttribute("href");
+        const sectionId = link.getAttribute("href");
 
-        const targetSection = document.querySelector(targetId);
+        const section = document.querySelector(sectionId);
 
-        if (targetSection) {
+        if (section) {
 
-            targetSection.scrollIntoView({
+            section.scrollIntoView({
                 behavior: "smooth"
             });
 
@@ -44,26 +44,26 @@ navLinks.forEach(function (link) {
 
 
 // ========================================
-// EXPLORE BUTTON
+// EXPLORE JOURNEY BUTTON
 // ========================================
 
-const exploreButton = document.querySelector(".btn");
+const exploreButton = document.querySelector(".explore-btn");
 
 if (exploreButton) {
 
     exploreButton.addEventListener("click", function () {
 
-        const aboutSection = document.querySelector("#about");
+        const journey = document.querySelector("#journey");
 
-        if (aboutSection) {
+        if (journey) {
 
-            aboutSection.scrollIntoView({
+            journey.scrollIntoView({
                 behavior: "smooth"
             });
 
         }
 
-        console.log("Exploring Lavanya.S profile...");
+        console.log("Exploring Lavanya's technical journey.");
 
     });
 
@@ -71,39 +71,18 @@ if (exploreButton) {
 
 
 // ========================================
-// CURRENT YEAR IN FOOTER
+// SKILL INTERACTION
 // ========================================
 
-const footer = document.querySelector("footer");
+const skillCards = document.querySelectorAll(".skill-card");
 
-if (footer) {
+skillCards.forEach(function (card) {
 
-    const currentYear = new Date().getFullYear();
+    card.addEventListener("click", function () {
 
-    footer.innerHTML =
-        "<p>Made with ❤️ by Lavanya.S</p>" +
-        "<p>© " + currentYear +
-        " Lavanya.S | All Rights Reserved</p>";
+        const skillName = card.querySelector("h3").textContent;
 
-}
-
-
-// ========================================
-// SKILL CARD CLICK EFFECT
-// ========================================
-
-const skills = document.querySelectorAll(".skill");
-
-skills.forEach(function (skill) {
-
-    skill.addEventListener("click", function () {
-
-        skill.classList.toggle("active");
-
-        console.log(
-            "Selected skill: " +
-            skill.querySelector("h3").textContent
-        );
+        console.log("Skill selected: " + skillName);
 
     });
 
@@ -111,19 +90,18 @@ skills.forEach(function (skill) {
 
 
 // ========================================
-// PROJECT / EVENT CARD CLICK
+// EVENT INTERACTION
 // ========================================
 
-const projects = document.querySelectorAll(".project");
+const eventCards = document.querySelectorAll(".event-box > div");
 
-projects.forEach(function (project) {
+eventCards.forEach(function (card) {
 
-    project.addEventListener("click", function () {
+    card.addEventListener("click", function () {
 
-        console.log(
-            "Selected event: " +
-            project.querySelector("h3").textContent
-        );
+        const eventName = card.querySelector("h3").textContent;
+
+        console.log("Event selected: " + eventName);
 
     });
 
@@ -134,21 +112,42 @@ projects.forEach(function (project) {
 // STUDENT INFORMATION
 // ========================================
 
-const studentName = "Lavanya.S";
-const department = "Information Technology";
-const college = "KGISL College";
-const year = "2nd Year";
+const student = {
+    name: "Lavanya.S",
+    department: "Information Technology",
+    college: "KGISL College",
+    year: "2nd Year"
+};
 
-console.log("Name: " + studentName);
-console.log("Department: " + department);
-console.log("College: " + college);
-console.log("Year: " + year);
+console.log("Student: " + student.name);
+console.log("Department: " + student.department);
+console.log("College: " + student.college);
+console.log("Year: " + student.year);
 
 
 // ========================================
-// PARTICIPATION INFORMATION
+// TECHNICAL JOURNEY
 // ========================================
 
-console.log("Hackathon: JCT College");
-console.log("Paper Presentation: KPR College");
-console.log("PyExpo: First Year");
+const journey = [
+    "PyExpo - First Year",
+    "Hackathon - JCT College",
+    "Paper Presentation - KPR College"
+];
+
+console.log("Technical Journey:");
+
+journey.forEach(function (event, index) {
+
+    console.log((index + 1) + ". " + event);
+
+});
+
+
+// ========================================
+// CURRENT YEAR
+// ========================================
+
+const currentYear = new Date().getFullYear();
+
+console.log("Portfolio Year: " + currentYear);
