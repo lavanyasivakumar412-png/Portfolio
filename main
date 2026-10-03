@@ -1,128 +1,154 @@
 // ========================================
-// LAVANYA PORTFOLIO - JAVASCRIPT
+// LAVANYA.S PORTFOLIO - JAVASCRIPT
 // ========================================
 
 
 // ========================================
-// SMOOTH SCROLL FUNCTION
+// PAGE LOAD MESSAGE
 // ========================================
 
-function goToPage(pageId) {
+window.addEventListener("load", function () {
 
-    const page = document.getElementById(pageId);
+    console.log("Welcome to Lavanya.S Portfolio!");
 
-    if (page) {
-
-        page.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    }
-
-}
+});
 
 
 // ========================================
-// NAVIGATION CLICK
+// SMOOTH NAVIGATION
 // ========================================
 
-const navigationLinks = document.querySelectorAll(".menu a");
+const navLinks = document.querySelectorAll("nav a");
 
-navigationLinks.forEach(function (link) {
+navLinks.forEach(function (link) {
 
     link.addEventListener("click", function (event) {
 
         event.preventDefault();
 
-        const target = link.getAttribute("href");
+        const targetId = link.getAttribute("href");
 
-        goToPage(target.substring(1));
+        const targetSection = document.querySelector(targetId);
 
-    });
+        if (targetSection) {
 
-});
-
-
-// ========================================
-// NAVBAR SHADOW ON SCROLL
-// ========================================
-
-const navbar = document.querySelector("nav");
-
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-
-});
-
-
-// ========================================
-// ACTIVE MENU LINK (highlight current page)
-// ========================================
-
-const pages = document.querySelectorAll(".page");
-
-const pageObserver = new IntersectionObserver(function (entries) {
-
-    entries.forEach(function (entry) {
-
-        if (entry.isIntersecting) {
-
-            navigationLinks.forEach(function (link) {
-
-                link.classList.remove("active");
-
-                if (link.getAttribute("href") === "#" + entry.target.id) {
-                    link.classList.add("active");
-                }
-
+            targetSection.scrollIntoView({
+                behavior: "smooth"
             });
 
         }
 
     });
 
-}, { threshold: 0.5 });
-
-pages.forEach(function (page) {
-    pageObserver.observe(page);
 });
 
 
 // ========================================
-// FADE-IN ANIMATION ON SCROLL
+// EXPLORE BUTTON
 // ========================================
 
-const contentBlocks = document.querySelectorAll(".content");
+const exploreButton = document.querySelector(".btn");
 
-const revealObserver = new IntersectionObserver(function (entries) {
+if (exploreButton) {
 
-    entries.forEach(function (entry) {
+    exploreButton.addEventListener("click", function () {
 
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+        const aboutSection = document.querySelector("#about");
+
+        if (aboutSection) {
+
+            aboutSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
         }
+
+        console.log("Exploring Lavanya.S profile...");
 
     });
 
-}, { threshold: 0.2 });
+}
 
-contentBlocks.forEach(function (block) {
-    block.classList.add("reveal");
-    revealObserver.observe(block);
+
+// ========================================
+// CURRENT YEAR IN FOOTER
+// ========================================
+
+const footer = document.querySelector("footer");
+
+if (footer) {
+
+    const currentYear = new Date().getFullYear();
+
+    footer.innerHTML =
+        "<p>Made with ❤️ by Lavanya.S</p>" +
+        "<p>© " + currentYear +
+        " Lavanya.S | All Rights Reserved</p>";
+
+}
+
+
+// ========================================
+// SKILL CARD CLICK EFFECT
+// ========================================
+
+const skills = document.querySelectorAll(".skill");
+
+skills.forEach(function (skill) {
+
+    skill.addEventListener("click", function () {
+
+        skill.classList.toggle("active");
+
+        console.log(
+            "Selected skill: " +
+            skill.querySelector("h3").textContent
+        );
+
+    });
+
 });
 
 
 // ========================================
-// FOOTER YEAR (updates automatically)
+// PROJECT / EVENT CARD CLICK
 // ========================================
 
-const footerText = document.querySelector("footer p");
+const projects = document.querySelectorAll(".project");
 
-footerText.textContent =
-    "© " + new Date().getFullYear() +
-    " Lavanya Sivakumar | Information Technology";
+projects.forEach(function (project) {
+
+    project.addEventListener("click", function () {
+
+        console.log(
+            "Selected event: " +
+            project.querySelector("h3").textContent
+        );
+
+    });
+
+});
+
+
+// ========================================
+// STUDENT INFORMATION
+// ========================================
+
+const studentName = "Lavanya.S";
+const department = "Information Technology";
+const college = "KGISL College";
+const year = "2nd Year";
+
+console.log("Name: " + studentName);
+console.log("Department: " + department);
+console.log("College: " + college);
+console.log("Year: " + year);
+
+
+// ========================================
+// PARTICIPATION INFORMATION
+// ========================================
+
+console.log("Hackathon: JCT College");
+console.log("Paper Presentation: KPR College");
+console.log("PyExpo: First Year");
