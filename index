@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lavanya</title>
+    <title>Lavanya Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Hi, I am Lavanya</h1>
-    <h2>Information Technology Student</h2>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I am Lavanya Sivakumar</p>
+    </header>
 
-    <p>I am a 2nd year IT student at KGISL College.</p>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am a second-year Information Technology student
+            at KGISL College, Coimbatore.
+            I am interested in programming, web development,
+            artificial intelligence and new technologies.
+        </p>
+    </section>
 
-    <h3>My Participations</h3>
+    <section>
+        <h2>My Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Data Structures</li>
+        </ul>
+    </section>
 
-    <p>Hackathon - JCT College</p>
-    <p>Paper Presentation - KPR College</p>
-    <p>PyExpo - First Year</p>
+    <section>
+        <h2>My Achievements</h2>
+        <p>Participated in a Hackathon at JCT College.</p>
+        <p>Participated in a Paper Presentation at KPR College.</p>
+        <p>Participated in PyExpo during my first year.</p>
+    </section>
+
+    <section>
+        <h2>My Goal</h2>
+        <p>
+            My goal is to improve my technical skills,
+            develop innovative projects and participate
+            in more technical events.
+        </p>
+    </section>
+
+    <footer>
+        <p>Thank you for visiting my portfolio!</p>
+    </footer>
 
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
