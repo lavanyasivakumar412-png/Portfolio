@@ -1,273 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
+// ========================================
+// LAVANYA PORTFOLIO - JAVASCRIPT
+// ========================================
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Lavanya Sivakumar, Information Technology student at KGISL College.">
 
-    <title>Lavanya | Portfolio</title>
+// ========================================
+// SMOOTH SCROLL FUNCTION
+// ========================================
 
-    <link rel="stylesheet" href="style.css">
-</head>
+function goToPage(pageId) {
 
-<body>
+    const page = document.getElementById(pageId);
 
-    <!-- NAVIGATION -->
+    if (page) {
 
-    <nav>
+        page.scrollIntoView({
+            behavior: "smooth"
+        });
 
-        <div class="logo">LAVANYA.S</div>
+    }
 
-        <div class="menu">
+}
 
-            <a href="#home">Home</a>
 
-            <a href="#about">About</a>
+// ========================================
+// NAVIGATION CLICK
+// ========================================
 
-            <a href="#skills">Skills</a>
+const navigationLinks = document.querySelectorAll(".menu a");
 
-            <a href="#achievements">Achievements</a>
+navigationLinks.forEach(function (link) {
 
-            <a href="#goal">Goal</a>
+    link.addEventListener("click", function (event) {
 
-        </div>
+        event.preventDefault();
 
-    </nav>
+        const target = link.getAttribute("href");
 
+        goToPage(target.substring(1));
 
-    <!-- PAGE 1 : WELCOME -->
+    });
 
-    <section id="home" class="page home">
+});
 
-        <div class="content">
 
-            <p class="small-text">WELCOME TO MY PORTFOLIO</p>
+// ========================================
+// NAVBAR SHADOW ON SCROLL
+// ========================================
 
-            <h1>Hello, I'm</h1>
+const navbar = document.querySelector("nav");
 
-            <h2>Lavanya Sivakumar</h2>
+window.addEventListener("scroll", function () {
 
-            <p class="description">
-                Information Technology Student
-                <br>
-                KGISL College
-            </p>
+    if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
 
-            <button class="next-btn" onclick="goToPage('about')">
-                Explore My Journey →
-            </button>
+});
 
-        </div>
 
-    </section>
+// ========================================
+// ACTIVE MENU LINK (highlight current page)
+// ========================================
 
+const pages = document.querySelectorAll(".page");
 
-    <!-- PAGE 2 : ABOUT ME -->
+const pageObserver = new IntersectionObserver(function (entries) {
 
-    <section id="about" class="page about">
+    entries.forEach(function (entry) {
 
-        <div class="content">
+        if (entry.isIntersecting) {
 
-            <p class="small-text">01 / ABOUT ME</p>
+            navigationLinks.forEach(function (link) {
 
-            <h1>Who Am I?</h1>
+                link.classList.remove("active");
 
-            <p class="large-text">
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                    link.classList.add("active");
+                }
 
-                I am <b>Lavanya Sivakumar</b>, a second-year
-                Information Technology student at
-                <b>KGISL College</b>.
+            });
 
-            </p>
+        }
 
-            <p>
+    });
 
-                I am interested in technology, programming,
-                innovation and problem solving. I enjoy learning
-                new technologies and applying my knowledge through
-                technical events and projects.
+}, { threshold: 0.5 });
 
-            </p>
+pages.forEach(function (page) {
+    pageObserver.observe(page);
+});
 
-            <p>
 
-                I believe that every technical event gives me
-                an opportunity to learn something new and improve
-                my skills.
+// ========================================
+// FADE-IN ANIMATION ON SCROLL
+// ========================================
 
-            </p>
+const contentBlocks = document.querySelectorAll(".content");
 
-        </div>
+const revealObserver = new IntersectionObserver(function (entries) {
 
-    </section>
+    entries.forEach(function (entry) {
 
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
 
-    <!-- PAGE 3 : SKILLS -->
+    });
 
-    <section id="skills" class="page skills">
+}, { threshold: 0.2 });
 
-        <div class="content">
+contentBlocks.forEach(function (block) {
+    block.classList.add("reveal");
+    revealObserver.observe(block);
+});
 
-            <p class="small-text">02 / SKILLS</p>
 
-            <h1>What I Know</h1>
+// ========================================
+// FOOTER YEAR (updates automatically)
+// ========================================
 
-            <div class="skill-container">
+const footerText = document.querySelector("footer p");
 
-                <div class="skill-card">
-                    <h3>HTML</h3>
-                    <p>Web Structure</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>CSS</h3>
-                    <p>Web Designing</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>Web Interaction</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Python</h3>
-                    <p>Programming</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Java</h3>
-                    <p>Object Oriented Programming</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Data Structures</h3>
-                    <p>Problem Solving</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PAGE 4 : ACHIEVEMENTS -->
-
-    <section id="achievements" class="page achievements">
-
-        <div class="content">
-
-            <p class="small-text">03 / ACHIEVEMENTS</p>
-
-            <h1>My Experiences</h1>
-
-            <div class="achievement-container">
-
-                <div class="achievement-card">
-
-                    <span>01</span>
-
-                    <h3>Hackathon</h3>
-
-                    <p>
-                        Participated in a Hackathon
-                        at JCT College.
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <span>02</span>
-
-                    <h3>Paper Presentation</h3>
-
-                    <p>
-                        Participated in a Paper Presentation
-                        at KPR College.
-                    </p>
-
-                </div>
-
-
-                <div class="achievement-card">
-
-                    <span>03</span>
-
-                    <h3>PyExpo</h3>
-
-                    <p>
-                        Participated in PyExpo
-                        during my first year.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PAGE 5 : GOAL -->
-
-    <section id="goal" class="page goal">
-
-        <div class="content">
-
-            <p class="small-text">04 / MY GOAL</p>
-
-            <h1>Where I'm Going</h1>
-
-            <p class="large-text">
-
-                "Learn. Build. Innovate."
-
-            </p>
-
-            <p>
-
-                My goal is to continuously improve my
-                programming and technical skills, participate
-                in more hackathons and technical events,
-                and develop innovative projects that can
-                solve real-world problems.
-
-            </p>
-
-            <p>
-
-                I want to explore emerging technologies
-                and build a strong career in the field
-                of Information Technology.
-
-            </p>
-
-            <button class="top-btn" onclick="goToPage('home')">
-                Back to Home ↑
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026 Lavanya Sivakumar | Information Technology
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+footerText.textContent =
+    "© " + new Date().getFullYear() +
+    " Lavanya Sivakumar | Information Technology";
