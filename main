@@ -1,15 +1,15 @@
 // ========================================
-// LAVANYA.S - PORTFOLIO JAVASCRIPT
+// LAVANYA PORTFOLIO - JAVASCRIPT
 // ========================================
 
 
 // ========================================
-// PAGE LOADING
+// PAGE LOAD
 // ========================================
 
 window.addEventListener("load", function () {
 
-    console.log("Lavanya.S portfolio loaded successfully.");
+    console.log("Welcome to Lavanya's Portfolio!");
 
 });
 
@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 // NAVIGATION
 // ========================================
 
-const navigationLinks = document.querySelectorAll(".nav-menu a");
+const navigationLinks = document.querySelectorAll(".menu a");
 
 navigationLinks.forEach(function (link) {
 
@@ -26,17 +26,9 @@ navigationLinks.forEach(function (link) {
 
         event.preventDefault();
 
-        const sectionId = link.getAttribute("href");
+        const target = link.getAttribute("href");
 
-        const section = document.querySelector(sectionId);
-
-        if (section) {
-
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
+        goToPage(target.substring(1));
 
     });
 
@@ -44,28 +36,20 @@ navigationLinks.forEach(function (link) {
 
 
 // ========================================
-// EXPLORE JOURNEY BUTTON
+// PAGE SCROLL FUNCTION
 // ========================================
 
-const exploreButton = document.querySelector(".explore-btn");
+function goToPage(pageId) {
 
-if (exploreButton) {
+    const page = document.getElementById(pageId);
 
-    exploreButton.addEventListener("click", function () {
+    if (page) {
 
-        const journey = document.querySelector("#journey");
+        page.scrollIntoView({
+            behavior: "smooth"
+        });
 
-        if (journey) {
-
-            journey.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-        console.log("Exploring Lavanya's technical journey.");
-
-    });
+    }
 
 }
 
@@ -80,9 +64,12 @@ skillCards.forEach(function (card) {
 
     card.addEventListener("click", function () {
 
-        const skillName = card.querySelector("h3").textContent;
+        const skillName =
+            card.querySelector("h3").textContent;
 
-        console.log("Skill selected: " + skillName);
+        console.log(
+            "Skill selected: " + skillName
+        );
 
     });
 
@@ -90,18 +77,22 @@ skillCards.forEach(function (card) {
 
 
 // ========================================
-// EVENT INTERACTION
+// ACHIEVEMENT INTERACTION
 // ========================================
 
-const eventCards = document.querySelectorAll(".event-box > div");
+const achievementCards =
+    document.querySelectorAll(".achievement-card");
 
-eventCards.forEach(function (card) {
+achievementCards.forEach(function (card) {
 
     card.addEventListener("click", function () {
 
-        const eventName = card.querySelector("h3").textContent;
+        const achievement =
+            card.querySelector("h3").textContent;
 
-        console.log("Event selected: " + eventName);
+        console.log(
+            "Achievement selected: " + achievement
+        );
 
     });
 
@@ -112,34 +103,44 @@ eventCards.forEach(function (card) {
 // STUDENT INFORMATION
 // ========================================
 
-const student = {
-    name: "Lavanya.S",
-    department: "Information Technology",
-    college: "KGISL College",
-    year: "2nd Year"
-};
+const studentName = "Lavanya Sivakumar";
 
-console.log("Student: " + student.name);
-console.log("Department: " + student.department);
-console.log("College: " + student.college);
-console.log("Year: " + student.year);
+const department =
+    "Information Technology";
+
+const college =
+    "KGISL College";
+
+const year =
+    "2nd Year";
+
+console.log("Name: " + studentName);
+console.log("Department: " + department);
+console.log("College: " + college);
+console.log("Year: " + year);
 
 
 // ========================================
-// TECHNICAL JOURNEY
+// ACHIEVEMENT DATA
 // ========================================
 
-const journey = [
-    "PyExpo - First Year",
+const achievements = [
+
     "Hackathon - JCT College",
-    "Paper Presentation - KPR College"
+
+    "Paper Presentation - KPR College",
+
+    "PyExpo - First Year"
+
 ];
 
-console.log("Technical Journey:");
+console.log("My Achievements:");
 
-journey.forEach(function (event, index) {
+achievements.forEach(function (item, index) {
 
-    console.log((index + 1) + ". " + event);
+    console.log(
+        (index + 1) + ". " + item
+    );
 
 });
 
@@ -150,4 +151,6 @@ journey.forEach(function (event, index) {
 
 const currentYear = new Date().getFullYear();
 
-console.log("Portfolio Year: " + currentYear);
+console.log(
+    "Portfolio Year: " + currentYear
+);
