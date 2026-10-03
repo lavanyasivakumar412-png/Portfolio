@@ -1,122 +1,84 @@
 // ========================================
-// LAVANYA.S PORTFOLIO - JAVASCRIPT
+// LAVANYA PORTFOLIO - JAVASCRIPT
 // ========================================
 
 
 // ========================================
-// STUDENT INFORMATION
+// SMOOTH SCROLL FUNCTION
 // ========================================
 
-const student = {
-    name: "Lavanya.S",
-    department: "Information Technology",
-    college: "KGISL College",
-    year: "2nd Year",
-    participations: [
-        "Hackathon - JCT College",
-        "Paper Presentation - KPR College",
-        "PyExpo - First Year"
-    ]
-};
+function goToPage(pageId) {
 
+    const page = document.getElementById(pageId);
 
-// ========================================
-// PAGE LOAD MESSAGE
-// ========================================
+    if (page) {
 
-window.addEventListener("load", function () {
+        page.scrollIntoView({
+            behavior: "smooth"
+        });
 
-    console.log("Welcome to " + student.name + " Portfolio!");
-    console.log("Department: " + student.department);
-    console.log("College: " + student.college);
-    console.log("Year: " + student.year);
-
-});
-
-
-// ========================================
-// SMOOTH NAVIGATION
-// ========================================
-
-const navLinks = document.querySelectorAll(".nav-links a");
-
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        const targetSection = document.querySelector(link.getAttribute("href"));
-
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: "smooth" });
-        }
-
-    });
-
-});
-
-
-// ========================================
-// EXPLORE BUTTON
-// ========================================
-
-const exploreButton = document.querySelector(".btn");
-
-if (exploreButton) {
-
-    exploreButton.addEventListener("click", function () {
-
-        const aboutSection = document.querySelector("#about");
-
-        if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: "smooth" });
-        }
-
-    });
+    }
 
 }
 
 
 // ========================================
-// NAVBAR SHADOW + BACK TO TOP BUTTON
+// NAVIGATION CLICK
+// ========================================
+
+const navigationLinks = document.querySelectorAll(".menu a");
+
+navigationLinks.forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const target = link.getAttribute("href");
+
+        goToPage(target.substring(1));
+
+    });
+
+});
+
+
+// ========================================
+// NAVBAR SHADOW ON SCROLL
 // ========================================
 
 const navbar = document.querySelector("nav");
-const toTopButton = document.getElementById("toTop");
 
 window.addEventListener("scroll", function () {
 
-    navbar.classList.toggle("scrolled", window.scrollY > 30);
-    toTopButton.classList.toggle("show", window.scrollY > 500);
-
-});
-
-toTopButton.addEventListener("click", function () {
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
 
 });
 
 
 // ========================================
-// ACTIVE MENU LINK (highlights current section)
+// ACTIVE MENU LINK (highlight current page)
 // ========================================
 
-const sections = document.querySelectorAll("section[id]");
+const pages = document.querySelectorAll(".page");
 
-const sectionObserver = new IntersectionObserver(function (entries) {
+const pageObserver = new IntersectionObserver(function (entries) {
 
     entries.forEach(function (entry) {
 
         if (entry.isIntersecting) {
 
-            navLinks.forEach(function (link) {
+            navigationLinks.forEach(function (link) {
 
-                link.classList.toggle(
-                    "active",
-                    link.getAttribute("href") === "#" + entry.target.id
-                );
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                    link.classList.add("active");
+                }
 
             });
 
@@ -124,10 +86,10 @@ const sectionObserver = new IntersectionObserver(function (entries) {
 
     });
 
-}, { rootMargin: "-40% 0px -55% 0px" });
+}, { threshold: 0.5 });
 
-sections.forEach(function (section) {
-    sectionObserver.observe(section);
+pages.forEach(function (page) {
+    pageObserver.observe(page);
 });
 
 
@@ -135,77 +97,32 @@ sections.forEach(function (section) {
 // FADE-IN ANIMATION ON SCROLL
 // ========================================
 
-const revealItems = document.querySelectorAll(
-    ".section-title, .about-box, .skill, .project"
-);
+const contentBlocks = document.querySelectorAll(".content");
 
-const revealObserver = new IntersectionObserver(function (entries, observer) {
+const revealObserver = new IntersectionObserver(function (entries) {
 
     entries.forEach(function (entry) {
 
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            observer.unobserve(entry.target);
         }
 
     });
 
-}, { threshold: 0.15 });
+}, { threshold: 0.2 });
 
-revealItems.forEach(function (item, index) {
-
-    item.classList.add("reveal");
-
-    // small delay so cards appear one by one
-    item.style.transitionDelay = (index % 3) * 0.1 + "s";
-
-    revealObserver.observe(item);
-
+contentBlocks.forEach(function (block) {
+    block.classList.add("reveal");
+    revealObserver.observe(block);
 });
 
 
 // ========================================
-// CURRENT YEAR IN FOOTER
+// FOOTER YEAR (updates automatically)
 // ========================================
 
-const yearElement = document.getElementById("year");
+const footerText = document.querySelector("footer p");
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-
-// ========================================
-// SKILL CARD CLICK EFFECT
-// ========================================
-
-const skills = document.querySelectorAll(".skill");
-
-skills.forEach(function (skill) {
-
-    skill.addEventListener("click", function () {
-
-        skill.classList.toggle("active");
-
-    });
-
-});
-
-
-// ========================================
-// EVENT CARD CLICK (console log)
-// ========================================
-
-const projects = document.querySelectorAll(".project");
-
-projects.forEach(function (project) {
-
-    project.addEventListener("click", function () {
-
-        console.log(
-            "Selected event: " + project.querySelector("h3").textContent
-        );
-
-    });
-
-});
+footerText.textContent =
+    "© " + new Date().getFullYear() +
+    " Lavanya Sivakumar | Information Technology";
