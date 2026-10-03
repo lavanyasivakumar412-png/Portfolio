@@ -1,51 +1,154 @@
-public class Main {
+// ========================================
+// LAVANYA.S PORTFOLIO - JAVASCRIPT
+// ========================================
 
-    public static void main(String[] args) {
 
-        String name = "Lavanya Sivakumar";
-        String department = "Information Technology";
-        String college = "KGISL College";
-        int year = 2;
+// ========================================
+// PAGE LOAD MESSAGE
+// ========================================
 
-        System.out.println("================================");
-        System.out.println("       STUDENT PROFILE");
-        System.out.println("================================");
+window.addEventListener("load", function () {
 
-        System.out.println("Name       : " + name);
-        System.out.println("Department : " + department);
-        System.out.println("Year       : " + year);
-        System.out.println("College    : " + college);
+    console.log("Welcome to Lavanya.S Portfolio!");
 
-        System.out.println("\n--------------------------------");
-        System.out.println("       PARTICIPATIONS");
-        System.out.println("--------------------------------");
+});
 
-        System.out.println("1. Hackathon - JCT College");
-        System.out.println("2. Paper Presentation - KPR College");
-        System.out.println("3. PyExpo - First Year");
 
-        System.out.println("\n--------------------------------");
-        System.out.println("       TECHNICAL SKILLS");
-        System.out.println("--------------------------------");
+// ========================================
+// SMOOTH NAVIGATION
+// ========================================
 
-        System.out.println("1. HTML");
-        System.out.println("2. CSS");
-        System.out.println("3. Java");
-        System.out.println("4. Python");
-        System.out.println("5. Data Structures");
+const navLinks = document.querySelectorAll("nav a");
 
-        System.out.println("\n--------------------------------");
-        System.out.println("            GOAL");
-        System.out.println("--------------------------------");
+navLinks.forEach(function (link) {
 
-        System.out.println(
-            "To improve my technical skills, " +
-            "develop innovative projects and " +
-            "participate in technical events."
+    link.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href");
+
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+
+            targetSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+// ========================================
+// EXPLORE BUTTON
+// ========================================
+
+const exploreButton = document.querySelector(".btn");
+
+if (exploreButton) {
+
+    exploreButton.addEventListener("click", function () {
+
+        const aboutSection = document.querySelector("#about");
+
+        if (aboutSection) {
+
+            aboutSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+        console.log("Exploring Lavanya.S profile...");
+
+    });
+
+}
+
+
+// ========================================
+// CURRENT YEAR IN FOOTER
+// ========================================
+
+const footer = document.querySelector("footer");
+
+if (footer) {
+
+    const currentYear = new Date().getFullYear();
+
+    footer.innerHTML =
+        "<p>Made with ❤️ by Lavanya.S</p>" +
+        "<p>© " + currentYear +
+        " Lavanya.S | All Rights Reserved</p>";
+
+}
+
+
+// ========================================
+// SKILL CARD CLICK EFFECT
+// ========================================
+
+const skills = document.querySelectorAll(".skill");
+
+skills.forEach(function (skill) {
+
+    skill.addEventListener("click", function () {
+
+        skill.classList.toggle("active");
+
+        console.log(
+            "Selected skill: " +
+            skill.querySelector("h3").textContent
         );
 
-        System.out.println("\n================================");
-        System.out.println("       THANK YOU");
-        System.out.println("================================");
-    }
-}
+    });
+
+});
+
+
+// ========================================
+// PROJECT / EVENT CARD CLICK
+// ========================================
+
+const projects = document.querySelectorAll(".project");
+
+projects.forEach(function (project) {
+
+    project.addEventListener("click", function () {
+
+        console.log(
+            "Selected event: " +
+            project.querySelector("h3").textContent
+        );
+
+    });
+
+});
+
+
+// ========================================
+// STUDENT INFORMATION
+// ========================================
+
+const studentName = "Lavanya.S";
+const department = "Information Technology";
+const college = "KGISL College";
+const year = "2nd Year";
+
+console.log("Name: " + studentName);
+console.log("Department: " + department);
+console.log("College: " + college);
+console.log("Year: " + year);
+
+
+// ========================================
+// PARTICIPATION INFORMATION
+// ========================================
+
+console.log("Hackathon: JCT College");
+console.log("Paper Presentation: KPR College");
+console.log("PyExpo: First Year");
