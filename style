@@ -1,20 +1,28 @@
 /* ========================================
+   LAVANYA PORTFOLIO - CSS
+======================================== */
+
+
+/* ========================================
    VARIABLES
 ======================================== */
 
 :root {
-    --bg: #080b12;
-    --bg-alt: #0d1119;
-    --card: #111722;
-    --border: #252b38;
-    --text: #ffffff;
-    --muted: #aeb5c0;
-    --accent: #00e5a8;
+    --navy: #14213d;
+    --blue: #0077b6;
+    --blue-dark: #023e8a;
+    --sky: #dff6ff;
+    --bg: #f4f7fb;
+    --white: #ffffff;
+    --text: #222222;
+    --muted: #55607a;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 14px 30px rgba(0, 119, 182, 0.18);
 }
 
 
 /* ========================================
-   GENERAL
+   GENERAL STYLING
 ======================================== */
 
 * {
@@ -25,12 +33,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     font-family: "Poppins", Arial, sans-serif;
-    background: var(--bg);
+    background-color: var(--bg);
     color: var(--text);
+    line-height: 1.6;
 }
 
 
@@ -39,111 +49,164 @@ body {
 ======================================== */
 
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-
+    background-color: rgba(20, 33, 61, 0.95);
+    backdrop-filter: blur(8px);
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 0 7%;
-
-    background: rgba(8, 11, 18, 0.85);
-    backdrop-filter: blur(10px);
-
-    border-bottom: 1px solid var(--border);
-
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
     z-index: 1000;
-
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, padding 0.3s;
 }
 
 nav.scrolled {
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    padding: 12px 8%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--accent);
-    letter-spacing: 1px;
+nav h2 {
+    font-size: 26px;
+    letter-spacing: 0.5px;
 }
 
-.menu {
+.nav-links {
     display: flex;
     gap: 25px;
 }
 
-.menu a {
+.nav-links a {
     position: relative;
-    color: #b5bcc8;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
-    padding: 5px 0;
+    font-size: 16px;
+    padding: 4px 0;
     transition: color 0.3s;
 }
 
-.menu a::after {
+.nav-links a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background-color: #00b4d8;
     transition: width 0.3s;
 }
 
-.menu a:hover,
-.menu a.active {
-    color: var(--accent);
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00b4d8;
 }
 
-.menu a:hover::after,
-.menu a.active::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
 
 /* ========================================
-   COMMON PAGE
+   HOME SECTION
 ======================================== */
 
-.page {
-    min-height: 100vh;
-
+.hero {
+    min-height: 90vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    padding: 100px 8%;
-
-    border-bottom: 1px solid var(--border);
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 40%),
+        linear-gradient(135deg, #dff6ff 0%, #c4e9fb 100%);
+    padding: 40px 20px;
 }
 
-.content {
-    width: 100%;
-    max-width: 1100px;
+.hero-content {
+    max-width: 750px;
 }
 
-.small-text {
-    color: var(--accent);
-    font-size: 13px;
-    letter-spacing: 3px;
+.small-title {
+    color: var(--blue);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 15px 0;
+    color: var(--navy);
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 28px;
     margin-bottom: 20px;
+    color: var(--navy);
 }
 
-.content h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+    color: var(--muted);
 }
 
-.description {
-    color: #a7afbb;
-    font-size: 20px;
-    line-height: 1.8;
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.btn {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--blue-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 119, 182, 0.35);
+}
+
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    color: var(--navy);
+    margin-bottom: 40px;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 12px auto 0;
+    background-color: var(--blue);
+    border-radius: 4px;
 }
 
 
@@ -153,8 +216,8 @@ nav.scrolled {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal.show {
@@ -164,94 +227,27 @@ nav.scrolled {
 
 
 /* ========================================
-   HOME
-======================================== */
-
-.home {
-    background:
-        radial-gradient(circle at 80% 30%, #123b38 0%, transparent 30%),
-        var(--bg);
-}
-
-.home h1 {
-    font-size: 30px;
-    color: #b8bec8;
-}
-
-.home h2 {
-    font-size: 75px;
-    margin-bottom: 25px;
-
-    background: linear-gradient(90deg, #00e5a8, #38bdf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-
-/* ========================================
-   BUTTON
-======================================== */
-
-.next-btn,
-.top-btn {
-    margin-top: 30px;
-
-    padding: 15px 25px;
-
-    border: none;
-
-    background: var(--accent);
-
-    color: #06100d;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    border-radius: 6px;
-
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-}
-
-.next-btn:hover,
-.top-btn:hover {
-    background: white;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 10px 25px rgba(0, 229, 168, 0.35);
-}
-
-
-/* ========================================
    ABOUT
 ======================================== */
 
-.about {
-    background: var(--bg-alt);
-}
-
-.about .content {
+.about-box {
     max-width: 850px;
+    margin: auto;
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 5px solid var(--blue);
+    box-shadow: var(--shadow);
 }
 
-.about p:not(.small-text) {
-    color: var(--muted);
+.about-box p {
     font-size: 18px;
-    line-height: 1.9;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: var(--muted);
 }
 
-.about b {
-    color: var(--accent);
-}
-
-.large-text {
-    font-size: 24px !important;
-    color: white !important;
+.about-box p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -259,146 +255,86 @@ nav.scrolled {
    SKILLS
 ======================================== */
 
-.skills {
-    background: var(--bg);
-}
-
-.skill-container {
+.skills-container {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.skill-card {
+.skill {
+    background-color: var(--white);
     padding: 30px;
-
-    background: var(--card);
-
-    border: 1px solid #29313e;
-
-    border-radius: 10px;
-
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    cursor: pointer;
     transition: 0.3s;
+    box-shadow: var(--shadow);
 }
 
-.skill-card:hover {
+.skill:hover,
+.skill.active {
     transform: translateY(-8px);
-
-    border-color: var(--accent);
-
-    background: #13201f;
-
-    box-shadow: 0 15px 35px rgba(0, 229, 168, 0.12);
+    background-color: var(--sky);
+    border-color: var(--blue);
+    box-shadow: var(--shadow-hover);
 }
 
-.skill-card h3 {
-    color: var(--accent);
-
-    font-size: 25px;
-
+.skill h3 {
+    color: var(--blue);
     margin-bottom: 10px;
 }
 
-.skill-card p {
-    color: #8f98a5;
-}
-
-
-/* ========================================
-   ACHIEVEMENTS
-======================================== */
-
-.achievements {
-    background: var(--bg-alt);
-}
-
-.achievement-container {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-    margin-top: 40px;
-}
-
-.achievement-card {
-    padding: 35px;
-
-    min-height: 230px;
-
-    background: var(--card);
-
-    border: 1px solid #29313e;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
-}
-
-.achievement-card:hover {
-    transform: translateY(-8px);
-
-    border-color: var(--accent);
-
-    box-shadow: 0 15px 35px rgba(0, 229, 168, 0.12);
-}
-
-.achievement-card span {
-    color: var(--accent);
-
-    font-size: 13px;
-}
-
-.achievement-card h3 {
-    font-size: 27px;
-
-    margin: 40px 0 15px;
-}
-
-.achievement-card p {
-    color: #929aa7;
-
-    line-height: 1.7;
-}
-
-
-/* ========================================
-   GOAL
-======================================== */
-
-.goal {
-    background:
-        radial-gradient(circle at 50% 50%, #123b38 0%, transparent 40%),
-        var(--bg);
-}
-
-.goal .content {
-    max-width: 850px;
-}
-
-.goal p:not(.small-text) {
+.skill p {
     color: var(--muted);
-
-    font-size: 18px;
-
-    line-height: 1.9;
-
-    margin-bottom: 20px;
 }
 
-.goal .large-text {
-    color: var(--accent) !important;
 
-    font-size: 35px !important;
+/* ========================================
+   EVENTS / PROJECTS
+======================================== */
 
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--blue);
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-num {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    font-size: 13px;
     font-weight: bold;
+    color: var(--blue);
+    background-color: var(--sky);
+    border-radius: 20px;
+}
+
+.project h3 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.project p {
+    font-size: 17px;
+    color: var(--muted);
 }
 
 
@@ -407,56 +343,90 @@ nav.scrolled {
 ======================================== */
 
 footer {
-    padding: 30px;
-
+    background-color: var(--navy);
+    color: white;
     text-align: center;
+    padding: 30px;
+}
 
-    background: #05070b;
-
-    color: #69717d;
-
-    font-size: 14px;
+footer p {
+    margin: 5px;
 }
 
 
 /* ========================================
-   MOBILE RESPONSIVE
+   BACK TO TOP BUTTON
 ======================================== */
 
-@media (max-width: 800px) {
+.to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--blue);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.4);
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+    z-index: 900;
+}
 
-    nav {
-        height: auto;
+.to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 
-        padding: 15px 5%;
+.to-top:hover {
+    background-color: var(--blue-dark);
+}
 
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+
+    nav,
+    nav.scrolled {
         flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .menu {
         gap: 12px;
+        padding: 14px 5%;
+    }
 
+    .nav-links {
         flex-wrap: wrap;
-
         justify-content: center;
+        gap: 16px;
     }
 
-    .home h2 {
-        font-size: 48px;
+    html {
+        scroll-padding-top: 130px;
     }
 
-    .content h1 {
-        font-size: 42px;
+    .hero h1 {
+        font-size: 40px;
     }
 
-    .skill-container,
-    .achievement-container {
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .skills-container,
+    .projects-container {
         grid-template-columns: 1fr;
     }
 
-    .page {
-        padding: 140px 6% 70px;
+    section {
+        padding: 60px 5%;
     }
 }
