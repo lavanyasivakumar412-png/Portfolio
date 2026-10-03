@@ -1,12 +1,3 @@
-/* ========================================
-   LAVANYA PORTFOLIO - CSS
-======================================== */
-
-
-/* ========================================
-   GENERAL STYLING
-======================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,256 +9,317 @@ html {
 }
 
 body {
+    background: #0a0d12;
+    color: #f2f2f2;
     font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #222;
     line-height: 1.6;
 }
 
-
-/* ========================================
-   NAVIGATION
-======================================== */
-
 nav {
-    background-color: #14213d;
-    color: white;
+    height: 75px;
+    padding: 0 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
+    border-bottom: 1px solid #242933;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    background: rgba(10, 13, 18, 0.95);
+    z-index: 100;
 }
 
-nav h2 {
-    font-size: 26px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    color: #00b4d8;
-}
-
-
-/* ========================================
-   HOME SECTION
-======================================== */
-
-.hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #dff6ff;
-    padding: 40px 20px;
-}
-
-.hero-content {
-    max-width: 750px;
-}
-
-.small-title {
-    color: #0077b6;
+.logo {
+    font-size: 28px;
     font-weight: bold;
+}
+
+.logo span {
+    color: #00e5a8;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-menu a {
+    color: #a9b0bb;
+    text-decoration: none;
+    font-size: 13px;
     letter-spacing: 2px;
 }
 
-.hero h1 {
-    font-size: 55px;
-    margin: 15px 0;
+.nav-menu a:hover {
+    color: #00e5a8;
 }
 
-.hero h1 span {
-    color: #0077b6;
+.hero {
+    min-height: 90vh;
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 70px;
+    align-items: center;
+    border-bottom: 1px solid #242933;
 }
 
-.hero h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 19px;
+.status {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #00e5a8;
+    color: #00e5a8;
+    font-size: 11px;
+    letter-spacing: 2px;
     margin-bottom: 25px;
 }
 
-
-/* ========================================
-   BUTTON
-======================================== */
-
-.btn {
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #023e8a;
-}
-
-
-/* ========================================
-   SECTIONS
-======================================== */
-
-section {
-    padding: 80px 8%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 35px;
-    color: #14213d;
-    margin-bottom: 40px;
-}
-
-
-/* ========================================
-   ABOUT
-======================================== */
-
-.about-box {
+.hero h1 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 0.95;
     max-width: 850px;
-    margin: auto;
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.about-box p {
+.hero h1 span {
+    display: block;
+    color: #00e5a8;
+}
+
+.hero-text > p {
+    color: #9ba3ae;
+    max-width: 600px;
+    margin: 30px 0;
     font-size: 18px;
-    margin-bottom: 15px;
 }
 
+.explore-btn {
+    background: #00e5a8;
+    border: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-/* ========================================
-   SKILLS
-======================================== */
+.explore-btn:hover {
+    background: #ffffff;
+}
 
-.skills-container {
+.profile-card {
+    border: 1px solid #303640;
+    padding: 25px;
+    background: #11151c;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    color: #69717d;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border: 1px solid #00e5a8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px auto 25px;
+    font-size: 35px;
+    color: #00e5a8;
+}
+
+.profile-card h2 {
+    text-align: center;
+}
+
+.profile-card > p {
+    text-align: center;
+    color: #89919d;
+}
+
+.college {
+    margin-top: 25px;
+    padding: 12px;
+    text-align: center;
+    background: #181d25;
+    color: #00e5a8;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.journey,
+.skills,
+.events {
+    padding: 100px 8%;
+    border-bottom: 1px solid #242933;
+}
+
+.heading > span {
+    color: #00e5a8;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.heading h2 {
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+.timeline {
+    margin-top: 60px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 2px 1fr;
+    gap: 30px;
+    padding: 35px 0;
+    border-bottom: 1px solid #242933;
+}
+
+.year {
+    color: #69717d;
+    font-size: 12px;
+}
+
+.line {
+    background: #00e5a8;
+}
+
+.journey-content span,
+.event-box span {
+    color: #00e5a8;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.journey-content h3 {
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.journey-content p {
+    color: #929aa5;
+    max-width: 650px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 60px;
+}
+
+.skill-card {
+    min-height: 220px;
+    padding: 25px;
+    border: 1px solid #2b313a;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border-color: #00e5a8;
+    transform: translateY(-7px);
+}
+
+.skill-card strong {
+    color: #555d68;
+}
+
+.skill-card h3 {
+    font-size: 25px;
+    margin-top: 60px;
+}
+
+.skill-card p {
+    color: #858e9a;
+}
+
+.event-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    margin-top: 60px;
+    border: 1px solid #2b313a;
 }
 
-.skill {
-    background-color: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+.event-box > div {
+    padding: 40px 30px;
+    border-right: 1px solid #2b313a;
 }
 
-.skill:hover,
-.skill.active {
-    transform: translateY(-8px);
-    background-color: #dff6ff;
+.event-box > div:last-child {
+    border-right: none;
 }
 
-.skill h3 {
-    color: #0077b6;
-    margin-bottom: 10px;
+.event-box h3 {
+    margin-top: 10px;
+    font-size: 23px;
 }
-
-
-/* ========================================
-   EVENTS / PROJECTS
-======================================== */
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.project {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.project:hover {
-    transform: translateY(-8px);
-}
-
-.project h3 {
-    color: #0077b6;
-    margin-bottom: 15px;
-}
-
-.project p {
-    font-size: 17px;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
 
 footer {
-    background-color: #14213d;
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-between;
+    color: #777f8a;
+}
+
+footer strong {
     color: white;
-    text-align: center;
-    padding: 30px;
+    font-size: 20px;
 }
 
-footer p {
-    margin: 5px;
+.footer-right {
+    text-align: right;
+    color: #00e5a8;
+    font-size: 11px;
+    letter-spacing: 2px;
 }
 
-
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
-
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
     nav {
-        flex-direction: column;
-        gap: 15px;
+        padding: 15px 5%;
     }
 
-    .nav-links {
+    .nav-menu {
         gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 5%;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 50px;
     }
 
-    .skills-container,
-    .projects-container {
+    .heading h2 {
+        font-size: 35px;
+    }
+
+    .skill-grid,
+    .event-box {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 60px 5%;
+    .event-box > div {
+        border-right: none;
+        border-bottom: 1px solid #2b313a;
+    }
+
+    .timeline-item {
+        grid-template-columns: 80px 2px 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-right {
+        text-align: left;
     }
 }
